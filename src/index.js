@@ -1,8 +1,7 @@
 module.exports = function check(str, bracketsConfig) {
-    var arr = [],
-        len = str.length,
-        count = 0;
-    for (var i = 0; i < len; i++) {
+    var arr=[];
+    var count=0;
+    for (let i=0; i<str.length; i++) {
         for (var j = 0; j < bracketsConfig.length; j++) {
             if (str.charAt(i) === bracketsConfig[j][0]) {
                 arr.push(str.charAt(i));
@@ -12,9 +11,7 @@ module.exports = function check(str, bracketsConfig) {
                     arr.pop();
                 }
             }
-            console.log(arr)
         }
     }
-    if (arr.length === 0) return true;
-    return false;
+    return (arr.length === 0)?true:false;
 }
